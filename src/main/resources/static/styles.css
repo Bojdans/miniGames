@@ -1,0 +1,116 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+}
+h1 {
+    color: #2c3e50;
+    margin: 20px 20px;
+}
+
+.game, .stats {
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 320px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.stats{
+    position: relative;
+}
+.stats p{
+    text-align: left;
+}
+.cell {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    cursor: pointer;
+    background-color: #eaf6ff;
+    transition: background-color 0.3s;
+}
+
+.cell:hover {
+    background-color: #cce7ff;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: calc(90px * 3);
+
+    margin-inline: auto;
+    gap: 0; /* Убирает отступы между строками и колонками */
+}
+button, a {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    text-decoration: none;
+    color: white;
+    background-color: #2ecc71;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover, a:hover {
+    background-color: #27ae60;
+}
+.stats span{
+    margin-left: 10px;
+    position: absolute;
+    right: 80px;
+}
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+}
+h1 {
+    color: #2c3e50;
+    margin: 20px 20px;
+}
+.game-links {
+    margin-top: 50px;
+}
+.game-links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 20px;
+    color: white;
+    background-color: #3498db;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+.game-links a:hover {
+    background-color: #2980b9;
+}
+.rps-buttons > *{
+    height: 41px;
+    width: 60px;
+    padding: 3px 0px 0px;
+}
+.rps-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+}
+.game{
+    user-select: none;
+}

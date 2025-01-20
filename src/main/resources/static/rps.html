@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Камень-ножницы-бумага</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Камень-ножницы-бумага</h1>
+<div class="game" id="rps">
+  <h2>Игровое поле</h2>
+  <div class="rps-buttons">
+    <button onclick="playRPS('камень')" ><span><img src="tiktokemoji.com_3.png" alt="" width="36px" height="36px"></span></button>
+    <button onclick="playRPS('бумага')"><span>📄</span></button>
+    <button onclick="playRPS('ножницы')"><span>✂️</span></button>
+  </div>
+  <div class="rps-results">
+    <p id="bot"></p>
+    <p id="player"></p>
+    <p id="rps-result"></p>
+  </div>
+</div>
+<div class="stats">
+  <h2>Статистика</h2>
+  <p>Победы: <span id="rps-wins">0</span></p>
+  <p>Ничьи: <span id="rps-draws">0</span></p>
+  <p>Поражения: <span id="rps-losses">0</span></p>
+</div>
+<a href="/game" class="reset">Назад на главную</a>
+<script src="logic.js"></script>
+<script>loadStatsRps()</script>
+</body>
+</html>

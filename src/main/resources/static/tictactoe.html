@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Крестики-нолики</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Крестики-нолики</h1>
+<div class="game" id="tictactoe">
+    <h2>Игровое поле</h2>
+    <div class="grid" id="grid"></div>
+    <p id="tictactoe-result"></p>
+    <button class="reset" onclick="renderCells()">Начать заново</button>
+</div>
+<div class="stats">
+    <h2>Статистика</h2>
+    <p>Победы X: <span id="ttt-wins">0</span></p>
+    <p>Победы O: <span id="ttt-losses">0</span></p>
+    <p>Ничьи: <span id="ttt-draws">0</span></p>
+</div>
+<a href="/game" class="reset">Назад на главную</a>
+</body>
+<script src="logic.js"></script>
+<script>loadStatsTTT()</script>
+</html>
