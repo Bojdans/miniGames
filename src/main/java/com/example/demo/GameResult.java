@@ -1,6 +1,6 @@
 package com.example.demo;
 
-// Вспомогательный класс для передачи данных
+
 public class GameResult {
     private String game;
     private String result;
@@ -8,7 +8,6 @@ public class GameResult {
     public String getGame() {
         return game;
     }
-
     public void setGame(String game) {
         this.game = game;
     }

@@ -3,7 +3,6 @@ package com.example.demo;
 import jakarta.annotation.PreDestroy;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.HttpStatus;
 
 import java.io.*;
 import java.net.URISyntaxException;
@@ -17,15 +16,15 @@ public class GameController {
 
     private static String STATS_FILE;
 
-    // Инициализация статистики
+    
     private Map<String, Map<String, Integer>> stats = new HashMap<>();
 
     public GameController() {
         try {
-            // Определяем директорию, где находится jar файл
+            
             File jarFile = new File(DemoApplication.class.getProtectionDomain().getCodeSource().getLocation().toURI());
             File jarDir = jarFile.getParentFile();
-            File relativeFile = new File(jarDir, "data/example.txt"); // Указываем относительный путь
+            File relativeFile = new File(jarDir, "data/example.txt"); 
             STATS_FILE = relativeFile.getAbsolutePath();
             System.out.println(STATS_FILE);
         } catch (URISyntaxException e) {
@@ -35,31 +34,31 @@ public class GameController {
         loadStatsFromFile();
     }
 
-    // Метод для обработки POST-запроса на добавление результата игры
+    
     @PostMapping("/update")
     public ResponseEntity<?> updateStats(@RequestBody GameResult result) {
         String game = result.getGame();
         String outcome = result.getResult();
 
-        // Увеличиваем соответствующий счётчик
+        
         stats.putIfAbsent(game, new HashMap<>());
         Map<String, Integer> gameStats = stats.get(game);
         gameStats.put(outcome, gameStats.getOrDefault(outcome, 0) + 1);
 
-        // Сохраняем статистику в файл
+        
         saveStatsToFile();
 
         return ResponseEntity.ok(Map.of("message", "Статистика обновлена", "stats", stats));
     }
 
-    // Метод для получения текущей статистики
+    
     @GetMapping
     public ResponseEntity<?> getStats() {
         loadStatsFromFile();
         return ResponseEntity.ok(stats);
     }
 
-    // Загрузка статистики из файла
+    
     private void loadStatsFromFile() {
         try {
             if (!Files.exists(Paths.get(STATS_FILE))) {
@@ -85,7 +84,7 @@ public class GameController {
         }
     }
 
-    // Сохранение статистики в файл
+    
     private void saveStatsToFile() {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(STATS_FILE));
