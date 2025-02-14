@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class PageController {
 
-    // Метод для возврата основной страницы
     @GetMapping("/game")
     public String index() {
         return "index.html";
